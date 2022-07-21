@@ -1,0 +1,72 @@
+.contact-form {
+  display: grid;
+  grid-template-rows: min-content min-content;
+  grid-template-columns: auto auto;
+  row-gap: 20px;
+  column-gap: 10px;
+
+  @include media(1100px) {
+    margin-top: 20px;
+    width: fit-content;
+  }
+}
+
+.contact-form__label {
+  grid-row: 1/1;
+  grid-column: span 2;
+
+  width: 20.2em;
+
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.444em;
+  color: white;
+
+  @include media(1000px) {
+    width: 100%;
+  }
+}
+
+.contact-form__email {
+  box-sizing: border-box;
+  padding-left: 10px;
+  border-radius: 3px;
+  border: none;
+  width: clamp(240px, 18.6vw, 500px);
+  height: 3.125em;
+  font-size: 1rem;
+
+  @include media($tablet) {
+    max-width: 18vw;
+    min-width: 200px;
+    padding-left: 6px;
+  }
+
+  @include media(1100px) {
+    max-width: 100%;
+    width: clamp(13.75rem, 30vw, 300px);
+    padding-left: 1vw;
+    justify-self: center;
+  }
+}
+
+.contact-form__email::placeholder {
+  font-size: 1rem;
+}
+
+.contact-form__submit {
+  height: 3.125em;
+  width: 7.1875em;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  color: $baseTextColor;
+  background: white;
+  border-radius: 3px;
+}
+
+.contact-form__submit:hover {
+  transition: 0.2s ease-out;
+  filter: brightness(90%);
+}

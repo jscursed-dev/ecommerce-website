@@ -1,0 +1,33 @@
+@import "./card/card";
+
+.second-frame {
+  position: relative;
+  padding: clamp(90px, 10.4166vw, 500px) 17.0138vw
+    clamp(110px, 10.4166vw, 500px) 17.0138vw;
+}
+
+.second-frame__layout {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 7.29vw;
+
+  @include media(700px) {
+    flex-direction: column;
+    margin: 10vw 0;
+  }
+}
+
+.second-frame__card-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7.29vw;
+}
+
+.second-frame__heading {
+  width: 11em;
+  @include media($smartphones) {
+    transform: translateX(-40px);
+  }
+}

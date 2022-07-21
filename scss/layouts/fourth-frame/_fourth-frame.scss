@@ -1,0 +1,14 @@
+@import "./citate/citate";
+
+.fourth-frame {
+  position: relative;
+  padding-top: 11vw;
+  padding-bottom: 5vw;
+  overflow: hidden;
+}
+
+.fourth-frame > .heading_small_dark_centered {
+  @include media(800px) {
+    margin-bottom: 50px;
+  }
+}

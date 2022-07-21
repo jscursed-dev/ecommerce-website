@@ -1,0 +1,33 @@
+@import "./header/header";
+
+.first-frame {
+  box-sizing: border-box;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 3.125vw 17.0138vw;
+  box-shadow: 0px 4px 16px 0px rgba(75, 0, 129, 0.06);
+
+  @include media($smartphones) {
+    padding: 8vw 10vw;
+  }
+}
+
+.first-frame::after {
+  z-index: -1;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  background: linear-gradient(
+      1.02deg,
+      #4a99d3 -17.33%,
+      rgba(74, 153, 211, 0) 75.91%
+    ),
+    #ffffff;
+  opacity: 0.2;
+  box-shadow: 0px 4px 16px rgba(75, 0, 129, 0.26);
+  height: 100%;
+  width: 100%;
+  transform: rotate(-180deg);
+}

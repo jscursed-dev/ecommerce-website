@@ -1,0 +1,7 @@
+// architecture: https://matthewelsom.com/blog/simple-scss-playbook.html
+// methodologie: https://en.bem.info/methodology/filestructure/
+
+@import "./base/_base-dir";
+@import "./abstracts/_abstracts-dir";
+@import "./common-blocks/_common-blocks-dir";
+@import "./layouts/_layouts-dir";

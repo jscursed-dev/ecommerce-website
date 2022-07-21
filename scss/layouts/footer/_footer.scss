@@ -1,0 +1,60 @@
+@import "./contact-form/contact-form";
+@import "./social-media/social-media";
+
+.footer {
+  background: $baseTextColor;
+  position: relative;
+  z-index: 2;
+  flex-direction: column;
+  padding-top: 55px;
+
+  display: flex;
+
+  .logo_white {
+    margin-right: 10.069vw;
+
+    @include media(1230px) {
+      margin-right: 15vw;
+    }
+
+    @include media(850px) {
+      margin-right: 8vw;
+    }
+
+    @include media($smartphones) {
+      position: absolute;
+      left: 0;
+      transform: translateX(8.611vw) translateY(-7vw);
+    }
+  }
+
+  .nav {
+    margin-right: 5.555vw;
+    @include media($smartphones) {
+      display: none;
+    }
+  }
+}
+
+.footer__upper-part {
+  padding: 0 8.611vw;
+  display: flex;
+  padding-bottom: 28px;
+
+  @include media($tablet) {
+    padding-right: 0;
+  }
+  @include media(1100px) {
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-right: 8.611vw;
+  }
+}
+
+.footer__lower-part {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 23px 8.611vw;
+  border-top: 1px solid white;
+}

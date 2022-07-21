@@ -1,0 +1,128 @@
+.citate {
+  position: relative;
+  display: flex;
+  align-items: center;
+  //width: fit-content;
+  gap: 6.944vw;
+
+  @include media(400px) {
+    gap: 4vw;
+  }
+}
+
+.citate__img-container {
+  position: relative;
+  width: 47vw;
+  height: 36vw;
+  max-height: 840px;
+
+  min-width: 425px;
+  img {
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    z-index: 1;
+    height: 36vw;
+    min-height: 326px;
+
+    @include media(860px) {
+      left: 10%;
+    }
+
+    @include media($smartphones) {
+      left: 4%;
+      height: 46vw;
+      min-height: 244px;
+      min-width: 188px;
+    }
+
+    @include media(420px) {
+      min-height: 192px; // I decided not to make overflow
+      min-width: 150px; // with her bun, cause it looks bad on small devices
+    }
+  }
+
+  @include media(860px) {
+    width: 20vw;
+    min-width: 300px;
+  }
+
+  @include media($smartphones) {
+    height: 36vw;
+    width: 20vw;
+    min-width: 186px;
+    min-height: auto;
+  }
+
+  @include media(420px) {
+    min-width: 150px;
+  }
+}
+
+.citate__img-container::after {
+  content: "";
+  z-index: -1;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: rgba(74, 153, 211, 0.1);
+  height: 28vw;
+  min-height: 263px;
+  width: 100%;
+
+  @include media($smartphones) {
+    height: 36vw;
+    min-height: 192px;
+  }
+}
+
+.citate__text-block {
+  transform: translateY(4vw);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 4vw, 30px);
+  width: 26.125em;
+
+  @include media(480px) {
+    transform: translateY(-10px);
+  }
+}
+
+.citate__quote {
+  width: 3.47vw;
+  min-width: 20px;
+}
+
+.citate__text {
+  font-size: 1rem;
+  line-height: 1.5em;
+  opacity: 0.5;
+}
+
+.citate__author {
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 1.055em;
+}
+
+.decoration_citate {
+  @extend %decoration_card;
+  top: 30%;
+  right: 0;
+}
+
+.citate__carousel-buttons {
+  display: flex;
+  width: fit-content;
+  align-self: flex-end;
+  gap: 0;
+
+  @include media(850px) {
+    transform: translateX(-15px) translateY(-30px);
+  }
+
+  @include media(460px) {
+    transform: translateX(-15px) translateY(-12px);
+  }
+}

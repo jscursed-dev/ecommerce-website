@@ -1,0 +1,54 @@
+%carousel-button {
+  width: 5.555vw;
+  height: 5.555vw;
+  min-width: 60px;
+  min-height: 60px;
+  max-width: 100px;
+  max-height: 100px;
+
+  background: baseTextColor;
+  border-radius: 4px 0px 0px 4px;
+
+  border: none;
+
+  cursor: pointer;
+
+  box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.08);
+
+  img {
+    width: 26.666%;
+  }
+
+  @include media($smartphones) {
+    width: 8vw;
+    height: 8vw;
+    min-height: 40px;
+    min-width: 40px;
+  }
+}
+
+%carousel-button_left {
+  @extend %carousel-button;
+  border-radius: 4px 0px 0px 4px;
+}
+
+%carousel-button_right {
+  @extend %carousel-button;
+  border-radius: 0px 4px 4px 0px;
+}
+
+.carousel-button_left_blue {
+  @extend %carousel-button_left;
+  background: #4a99d3;
+}
+
+.carousel-button_right_white {
+  @extend %carousel-button_left;
+  background: white;
+}
+
+.carousel-button_left_blue:hover,
+.carousel-button_right_white:hover {
+  transition: 0.2s ease-out;
+  filter: brightness(90%);
+}

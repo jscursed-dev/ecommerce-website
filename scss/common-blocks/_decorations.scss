@@ -1,0 +1,34 @@
+%decoration {
+  position: absolute;
+}
+
+%decoration__frame {
+  @extend %decoration;
+  z-index: 1;
+  width: 10vw;
+  min-width: 120px;
+}
+
+.decoration_frame_lower_left {
+  @extend %decoration__frame;
+  left: 0;
+  bottom: 0;
+}
+
+.decoration_frame_high_right {
+  @extend %decoration__frame;
+  top: 0;
+  right: 0;
+}
+
+.decoration_frame_lower_left_roated {
+  @extend .decoration_frame_lower_left;
+  transform: rotate(180deg) translateY(-24%);
+}
+
+.decoration_frame_lower_right_roated {
+  @extend %decoration__frame;
+  right: 0;
+  bottom: 0;
+  transform: rotate(180deg) translateY(-24%);
+}

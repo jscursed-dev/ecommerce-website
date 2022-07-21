@@ -1,0 +1,14 @@
+%logo {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.logo_blue {
+  @extend %logo;
+  color: $baseTextColor;
+}
+
+.logo_white {
+  @extend %logo;
+  color: $footerTextColor;
+}

@@ -1,0 +1,144 @@
+.card {
+  position: relative;
+  box-shadow: 5px 20px 50px rgba(74, 153, 211, 0.2);
+  box-sizing: border-box;
+  display: flex;
+  border-radius: 10px;
+  width: 26.4vw;
+  max-width: 500px;
+  min-width: 330px;
+  min-height: 470px;
+  padding: 48px;
+  flex-direction: column;
+
+  @include media($tabletPortrait) {
+    width: 34vw;
+    min-width: 260px;
+    min-height: 370.37px;
+  }
+}
+
+.card::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: -1;
+  width: 100%;
+  background: white;
+}
+
+%card__image {
+  position: absolute;
+  align-self: center;
+  height: 9.1vw;
+  min-height: 130px;
+  max-height: 182px;
+
+  @include media($tabletPortrait) {
+    min-height: 102.44px;
+  }
+}
+
+.card__image_recive {
+  @extend %card__image;
+  transform: translateX(-18%);
+}
+
+.card__image_send {
+  @extend %card__image;
+  height: 13.6vw;
+  min-height: 194.5px;
+  max-height: 272px;
+  align-self: center;
+  top: -5%;
+  //transform: translateY(-4.5vw);
+  @include media($tabletPortrait) {
+    min-height: 153.27px;
+  }
+}
+
+.card__image_buy {
+  @extend %card__image;
+  transform: translateX(-10%);
+}
+
+.card__info {
+  margin-top: clamp(100px, 9.1vw, 322px);
+  width: 100%;
+}
+
+.card__heading {
+  margin-top: 14.7%;
+  font-size: 1.25em;
+  line-height: 1.5em;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: $blockTextColor;
+}
+
+.card__description {
+  margin-top: 1rem;
+  opacity: 0.6;
+  color: $blockTextColor;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.625em;
+}
+
+.card__learn-more {
+  margin-top: 16.3%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1em;
+  height: fit-content;
+
+  color: $baseTextColor;
+
+  span {
+    font-weight: 500;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+  }
+
+  img {
+    width: 1em;
+    height: 1em;
+  }
+}
+
+%decoration_card {
+  @extend %decoration;
+  z-index: -2;
+  width: 10.655vw;
+  min-width: 140px;
+  @include media($tabletPortrait) {
+    display: none;
+  }
+}
+
+.decoration_card_receive {
+  @extend %decoration_card;
+  bottom: 0;
+  left: 0;
+
+  transform: translateX(-70%) translateY(-80%);
+}
+
+.decoration_card_send {
+  @extend %decoration_card;
+  top: 0;
+  right: 0;
+  transform: translateX(55%) translateY(-55%);
+}
+
+.decoration_card_buy {
+  @extend %decoration_card;
+  bottom: 0;
+  right: 0;
+
+  transform: translateX(55%) translateY(55%);
+}

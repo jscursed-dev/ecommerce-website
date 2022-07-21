@@ -1,0 +1,41 @@
+%heading {
+  font-weight: 500;
+  color: $headerColor;
+}
+
+.heading_big {
+  @extend %heading;
+  font-size: 3.125rem;
+  line-height: 4.375rem;
+  letter-spacing: 0.02em;
+}
+
+.heading_medium {
+  @extend %heading;
+  font-size: 2.25rem;
+  line-height: 1.277em;
+  letter-spacing: 0.05;
+}
+
+%heading_small {
+  font-size: 1.625em;
+  line-height: 1.038em;
+  font-weight: 700;
+}
+
+.heading_small_blue {
+  @extend %heading_small;
+  color: $baseTextColor;
+}
+
+.heading_tiny_white {
+  font-weight: 700;
+  font-size: 0.65em;
+  color: white;
+}
+
+.heading_small_dark_centered {
+  @extend %heading_small;
+  color: $blockTextColor;
+  text-align: center;
+}

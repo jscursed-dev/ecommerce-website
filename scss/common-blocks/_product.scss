@@ -1,0 +1,138 @@
+%product {
+  display: flex;
+  position: relative;
+  width: 60%;
+  height: 37vw;
+  align-items: center;
+}
+
+.product_right {
+  margin-top: 3vw;
+  @extend %product;
+
+  @include media($tabletPortrait) {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    align-items: center;
+    margin-top: clamp(70px, 8vw, 200px);
+    gap: 10vw;
+  }
+}
+.product_right > img {
+  width: 37vw;
+  min-width: 370px;
+  max-width: 740px;
+  position: absolute;
+  right: 0;
+  transform: translateX(100%);
+
+  @include media($tabletPortrait) {
+    position: static;
+    transform: none;
+    min-width: 400px;
+  }
+
+  @include media($smartphones) {
+    min-width: 300px;
+  }
+}
+
+.product_left {
+  @extend %product;
+  margin-top: 10.972vw;
+  margin-left: 11.597vw;
+  box-sizing: border-box;
+  width: fit-content;
+  gap: 68px;
+  flex-direction: row-reverse;
+
+  @include media($tabletPortrait) {
+    margin-top: clamp(75px, 18.972vw, 400px);
+    margin-left: 6vw;
+    width: 100%;
+    height: fit-content;
+    padding-bottom: clamp(160px, 20vw, 220px);
+    flex-direction: row;
+    gap: 6vw;
+  }
+
+  @include media(650px) {
+    flex-direction: column;
+    margin-left: 0;
+    padding-bottom: 14vw;
+  }
+}
+.product_left > img {
+  width: 37vw;
+  min-width: 380px;
+  max-width: 820px;
+
+  @include media($tabletPortrait) {
+    position: absolute;
+    right: -16%;
+    width: 56vw;
+  }
+
+  @include media(650px) {
+    position: static;
+  }
+
+  @include media($smartphones) {
+    min-width: 300px;
+  }
+}
+
+.product__info {
+  .heading_big {
+    @include media($smartphones) {
+      width: 80vw;
+      font-size: 2.4rem;
+      letter-spacing: 0.017rem;
+    }
+  }
+}
+
+.product__info_centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 27.5em;
+  gap: 15px;
+
+  @include media($tabletPortrait) {
+    width: 50vw;
+    margin-left: 6vw;
+    justify-content: center;
+  }
+  @include media(650px) {
+    width: 70vw;
+    margin-left: 0vw;
+  }
+}
+
+%product__description {
+  margin: 0.875rem 0px 3.75rem 0px;
+
+  @include media($tabletPortrait) {
+    margin: 0.875rem 0px 1.75rem 0px;
+  }
+}
+
+.product__description_big {
+  @extend %product__description;
+  font-size: 1.25rem;
+  line-height: 1.8em;
+
+  @include media($tabletPortrait) {
+    align-items: center;
+  }
+}
+
+.product__description_light_centered {
+  @extend .citate__text;
+  @extend %product__description;
+  text-align: center;
+}

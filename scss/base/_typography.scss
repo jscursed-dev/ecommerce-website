@@ -1,0 +1,30 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+* {
+  font-family: "Objective" !important;
+}
+
+@include media($ultraWide) {
+  html {
+    font-size: 22px;
+  }
+}
+
+@include media($regularWidth) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@include media($tablet) {
+  html {
+    font-size: 13px;
+  }
+}
+
+@include media($smartphones) {
+  html {
+    font-size: 12px !important;
+  }
+}

@@ -1,0 +1,28 @@
+.nav__list {
+  display: flex;
+  flex-direction: row;
+  gap: 5.208vw;
+
+  @include media(1000px) {
+    gap: 10vw;
+  }
+
+  @include media(740px) {
+    gap: 5vw;
+  }
+}
+
+.nav__list_gap-60 {
+  @extend .nav__list;
+  gap: 4.166vw;
+}
+
+.nav__link {
+  font-size: 1.125rem;
+}
+
+.nav__link_active {
+  @extend .nav__link;
+  color: $baseTextColor;
+  font-weight: 500;
+}
