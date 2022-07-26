@@ -1,6 +1,10 @@
 .social-media {
   display: flex;
   gap: 25px;
+
+  @include smartphones() {
+    gap: 15px;
+  }
 }
 
 .social-media__icon {

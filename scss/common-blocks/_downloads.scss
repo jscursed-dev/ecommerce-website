@@ -4,32 +4,37 @@
 
 .downloads_big_inline {
   @extend %downloads;
-  gap: 1.388vw;
+  gap: clamp(10px, 1.388vw, 20px);
   img {
-    width: 12.5vw;
-    min-width: 180px;
-    max-width: 270px;
+    @include ultraWide() {
+      width: 270px;
+    }
+    @include regularWidth() {
+      width: 180px;
+    }
 
-    @include media($tabletPortrait) {
-      min-width: 140px;
+    @include tabletPortrait() {
+      width: 140px;
     }
   }
-
-  @include media($tabletPortrait) {
+  @include tabletPortrait() {
     justify-content: center;
   }
 }
 
 .downloads_slim {
   @extend %downloads;
-  gap: 1.944vw;
+  gap: clamp(10px, 1.944vw, 20px);
   img {
-    width: 11.25vw;
-    min-width: 180px;
-    max-width: 250px;
+    @include ultraWide() {
+      width: 250px;
+    }
+    @include regularWidth() {
+      width: 165px;
+    }
 
-    @include media($tabletPortrait) {
-      min-width: 140px;
+    @include tabletPortrait() {
+      width: 130px;
     }
   }
 }

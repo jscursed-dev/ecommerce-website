@@ -1,94 +1,123 @@
 %product {
   display: flex;
   position: relative;
-  width: 60%;
-  height: 37vw;
+
+  width: 100%;
+  max-width: 100%;
+
   align-items: center;
 }
 
 .product_right {
-  margin-top: 3vw;
+  margin-top: 40px;
   @extend %product;
+  justify-content: space-between;
 
-  @include media($tabletPortrait) {
+  @include tabletPortrait() {
     flex-direction: column;
     text-align: center;
     align-items: center;
     width: 100%;
     height: fit-content;
     align-items: center;
-    margin-top: clamp(70px, 8vw, 200px);
-    gap: 10vw;
+    gap: 30px;
   }
 }
 .product_right > img {
-  width: 37vw;
-  min-width: 370px;
-  max-width: 740px;
-  position: absolute;
-  right: 0;
-  transform: translateX(100%);
+  max-width: 40%;
 
-  @include media($tabletPortrait) {
-    position: static;
-    transform: none;
-    min-width: 400px;
+  @include ultraWide() {
+    width: 720px;
+  }
+  @include regularWidth() {
+    width: 600px;
   }
 
-  @include media($smartphones) {
+  @include tabletPortrait() {
+    max-width: 80%;
     min-width: 300px;
+    width: 430px;
+  }
+
+  @include tabletPortrait() {
+    position: static;
+    transform: none;
   }
 }
 
 .product_left {
   @extend %product;
-  margin-top: 10.972vw;
-  margin-left: 11.597vw;
   box-sizing: border-box;
-  width: fit-content;
+  width: 100%;
+  justify-content: center;
   gap: 68px;
   flex-direction: row-reverse;
 
-  @include media($tabletPortrait) {
-    margin-top: clamp(75px, 18.972vw, 400px);
-    margin-left: 6vw;
-    width: 100%;
-    height: fit-content;
-    padding-bottom: clamp(160px, 20vw, 220px);
-    flex-direction: row;
-    gap: 6vw;
+  @include ultraWide() {
+    margin: 160px 0 60px 0;
   }
 
-  @include media(650px) {
+  @include regularWidth() {
+    margin: 158px 0 60px 0;
+  }
+
+  @include tablet() {
+    margin: 130px 0 60px 0;
+    gap: 30px;
+  }
+
+  @include tabletPortrait {
+    margin: 130px 0px 60px 0px;
+    gap: 38px;
+  }
+
+  @include smartphones() {
     flex-direction: column;
     margin-left: 0;
-    padding-bottom: 14vw;
+    padding-bottom: 30px;
   }
 }
 .product_left > img {
-  width: 37vw;
-  min-width: 380px;
-  max-width: 820px;
+  max-width: 58%;
+  min-width: 320px;
 
-  @include media($tabletPortrait) {
-    position: absolute;
-    right: -16%;
-    width: 56vw;
+  @include ultraWide() {
+    width: 850px;
   }
-
-  @include media(650px) {
-    position: static;
+  @include regularWidth() {
+    width: 650px;
   }
-
-  @include media($smartphones) {
+  @include tablet() {
+    width: 516px;
+  }
+  @include tabletPortrait() {
+    width: 400px;
+    max-width: 50%;
+    min-width: 260px;
+  }
+  @include smartphones() {
+    width: 500px;
+    max-width: 88%;
     min-width: 300px;
   }
 }
 
 .product__info {
+  max-width: 60%;
+
+  @include tabletPortrait {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 80%;
+  }
+
+  @include smartphones {
+    max-width: 100%;
+  }
+
   .heading_big {
-    @include media($smartphones) {
-      width: 80vw;
+    @include smartphones() {
       font-size: 2.4rem;
       letter-spacing: 0.017rem;
     }
@@ -99,24 +128,25 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 27.5em;
+  max-width: 40%;
+  width: fit-content;
+
   gap: 15px;
 
-  @include media($tabletPortrait) {
-    width: 50vw;
-    margin-left: 6vw;
-    justify-content: center;
+  @include tabletPortrait() {
+    max-width: 30%;
   }
-  @include media(650px) {
-    width: 70vw;
-    margin-left: 0vw;
+  @include smartphones {
+    width: 80%;
+    max-width: 80%;
   }
 }
 
 %product__description {
   margin: 0.875rem 0px 3.75rem 0px;
-
-  @include media($tabletPortrait) {
+  width: 27.5em;
+  max-width: 100%;
+  @include tabletPortrait() {
     margin: 0.875rem 0px 1.75rem 0px;
   }
 }
@@ -126,7 +156,7 @@
   font-size: 1.25rem;
   line-height: 1.8em;
 
-  @include media($tabletPortrait) {
+  @include tabletPortrait() {
     align-items: center;
   }
 }
@@ -134,5 +164,8 @@
 .product__description_light_centered {
   @extend .citate__text;
   @extend %product__description;
+  @include smartphones() {
+    width: 100%;
+  }
   text-align: center;
 }

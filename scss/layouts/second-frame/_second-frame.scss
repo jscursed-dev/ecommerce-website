@@ -13,9 +13,11 @@
   justify-content: center;
   gap: 7.29vw;
 
-  @include media(700px) {
+  @include smartphones() {
     flex-direction: column;
-    margin: 10vw 0;
+    gap: 0;
+    margin-top: 40px;
+    margin-bottom: 30px;
   }
 }
 
@@ -23,11 +25,18 @@
   display: flex;
   flex-direction: column;
   gap: 7.29vw;
+
+  @include smartphones() {
+    gap: 0;
+    .card {
+      margin-top: 75px;
+    }
+  }
 }
 
 .second-frame__heading {
   width: 11em;
-  @include media($smartphones) {
+  @include smartphones() {
     transform: translateX(-40px);
   }
 }

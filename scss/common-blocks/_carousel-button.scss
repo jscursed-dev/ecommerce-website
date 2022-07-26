@@ -1,11 +1,4 @@
 %carousel-button {
-  width: 5.555vw;
-  height: 5.555vw;
-  min-width: 60px;
-  min-height: 60px;
-  max-width: 100px;
-  max-height: 100px;
-
   background: baseTextColor;
   border-radius: 4px 0px 0px 4px;
 
@@ -19,9 +12,29 @@
     width: 26.666%;
   }
 
-  @include media($smartphones) {
-    width: 8vw;
-    height: 8vw;
+  @include ultraWide {
+    width: 105px;
+    height: 105px;
+  }
+  @include regularWidth() {
+    width: 85px;
+    height: 85px;
+  }
+  @include tablet() {
+    height: 75px;
+    width: 75px;
+  }
+  @include tabletPortrait() {
+    height: 65px;
+    width: 65px;
+  }
+  @include smartphones() {
+    height: 50px;
+    width: 50px;
+
+    max-width: 10vw;
+    max-height: 10vw;
+
     min-height: 40px;
     min-width: 40px;
   }

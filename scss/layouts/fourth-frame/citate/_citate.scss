@@ -5,57 +5,70 @@
   //width: fit-content;
   gap: 6.944vw;
 
-  @include media(400px) {
+  @include smartphones() {
     gap: 4vw;
   }
 }
 
 .citate__img-container {
   position: relative;
-  width: 47vw;
-  height: 36vw;
-  max-height: 840px;
+  display: flex;
 
-  min-width: 425px;
+  @include ultraWide() {
+    width: calc(670.8px * 1.736);
+    height: calc(518.4px * 1.736);
+  }
+  @include regularWidth() {
+    width: 670.8px;
+    height: 518.4px;
+  }
+  @include tablet() {
+    width: calc(670.8px * 0.85);
+    height: calc(518px * 0.85);
+  }
+  @include tabletPortrait() {
+    width: calc(670.8px * 0.652);
+    height: calc(518px * 0.652);
+  }
+  @include smartphones() {
+    width: calc(670.8px * 0.451);
+    height: calc(518px * 0.451);
+  }
+
   img {
-    position: absolute;
-    bottom: 0;
-    left: 25%;
-    z-index: 1;
-    height: 36vw;
-    min-height: 326px;
+    transform: translateX(25%);
+    align-self: flex-end;
 
-    @include media(860px) {
-      left: 10%;
+    @include ultraWide() {
+      width: 691.8px;
+      height: 900px;
+    }
+    @include regularWidth() {
+      width: 399px;
+      height: 519px;
+    }
+    @include tablet() {
+      width: 339.5px;
+      height: 441.6px;
+    }
+    @include tabletPortrait() {
+      width: 260.4px;
+      height: 338.7px;
+    }
+    @include smartphones() {
+      width: 180px;
+      height: 234px;
+      max-width: 100%;
+      max-height: 55vw;
     }
 
-    @include media($smartphones) {
-      left: 4%;
-      height: 46vw;
-      min-height: 244px;
-      min-width: 188px;
+    @include tabletPortrait() {
+      transform: translateX(10%);
     }
 
-    @include media(420px) {
-      min-height: 192px; // I decided not to make overflow
-      min-width: 150px; // with her bun, cause it looks bad on small devices
+    @include smartphones() {
+      transform: translateX(4%);
     }
-  }
-
-  @include media(860px) {
-    width: 20vw;
-    min-width: 300px;
-  }
-
-  @include media($smartphones) {
-    height: 36vw;
-    width: 20vw;
-    min-width: 186px;
-    min-height: auto;
-  }
-
-  @include media(420px) {
-    min-width: 150px;
   }
 }
 
@@ -67,13 +80,21 @@
   bottom: 0;
   left: 0;
   background: rgba(74, 153, 211, 0.1);
-  height: 28vw;
-  min-height: 263px;
   width: 100%;
-
-  @include media($smartphones) {
-    height: 36vw;
-    min-height: 192px;
+  @include ultraWide() {
+    height: 672px;
+  }
+  @include regularWidth() {
+    height: 414.72px;
+  }
+  @include tablet() {
+    height: 354.24px;
+  }
+  @include tabletPortrait() {
+    height: 270.4px;
+  }
+  @include smartphones() {
+    height: 184px;
   }
 }
 
@@ -81,17 +102,25 @@
   transform: translateY(4vw);
   display: flex;
   flex-direction: column;
-  gap: clamp(10px, 4vw, 30px);
+  gap: 20px;
+  max-width: 60%;
   width: 26.125em;
 
-  @include media(480px) {
-    transform: translateY(-10px);
+  @include smartphones() {
+    transform: translateY(40px);
   }
 }
 
 .citate__quote {
-  width: 3.47vw;
-  min-width: 20px;
+  @include ultraWide() {
+    width: 50px;
+  }
+  @include tablet() {
+    width: 35px;
+  }
+  @include smartphones() {
+    width: 20px;
+  }
 }
 
 .citate__text {
@@ -109,6 +138,7 @@
 .decoration_citate {
   @extend %decoration_card;
   top: 30%;
+  width: 9.47%;
   right: 0;
 }
 
@@ -118,11 +148,11 @@
   align-self: flex-end;
   gap: 0;
 
-  @include media(850px) {
+  @include tabletPortrait() {
     transform: translateX(-15px) translateY(-30px);
   }
 
-  @include media(460px) {
+  @include smartphones() {
     transform: translateX(-15px) translateY(-12px);
   }
 }

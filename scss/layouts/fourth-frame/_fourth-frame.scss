@@ -2,13 +2,13 @@
 
 .fourth-frame {
   position: relative;
-  padding-top: 11vw;
-  padding-bottom: 5vw;
+  padding-top: 90px;
+  padding-bottom: 55px;
   overflow: hidden;
 }
 
 .fourth-frame > .heading_small_dark_centered {
-  @include media(800px) {
+  @include tabletPortrait() {
     margin-bottom: 50px;
   }
 }

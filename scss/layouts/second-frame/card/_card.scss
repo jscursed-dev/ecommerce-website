@@ -4,17 +4,28 @@
   box-sizing: border-box;
   display: flex;
   border-radius: 10px;
-  width: 26.4vw;
-  max-width: 500px;
-  min-width: 330px;
-  min-height: 470px;
   padding: 48px;
   flex-direction: column;
+  flex-shrink: 0;
 
-  @include media($tabletPortrait) {
-    width: 34vw;
-    min-width: 260px;
-    min-height: 370.37px;
+  @include ultraWide() {
+    width: 500px;
+    height: 676px;
+  }
+  @include regularWidth() {
+    width: 380px;
+    height: 481px;
+  }
+  @include tablet() {
+    width: 330px;
+    height: 470px;
+  }
+  @include tabletPortrait() {
+    width: 300px;
+    height: 416px;
+  }
+  @include smartphones() {
+    max-width: none;
   }
 }
 
@@ -34,11 +45,15 @@
   position: absolute;
   align-self: center;
   height: 9.1vw;
-  min-height: 130px;
-  max-height: 182px;
 
-  @include media($tabletPortrait) {
-    min-height: 102.44px;
+  @include ultraWide() {
+    height: 182px;
+  }
+  @include regularWidth() {
+    height: 130px;
+  }
+  @include tabletPortrait() {
+    height: 102.4px;
   }
 }
 
@@ -49,14 +64,17 @@
 
 .card__image_send {
   @extend %card__image;
-  height: 13.6vw;
-  min-height: 194.5px;
-  max-height: 272px;
   align-self: center;
   top: -5%;
-  //transform: translateY(-4.5vw);
-  @include media($tabletPortrait) {
-    min-height: 153.27px;
+
+  @include ultraWide() {
+    height: 238px;
+  }
+  @include regularWidth() {
+    height: 194.5px;
+  }
+  @include tabletPortrait() {
+    height: 153.27px;
   }
 }
 
@@ -66,12 +84,19 @@
 }
 
 .card__info {
-  margin-top: clamp(100px, 9.1vw, 322px);
   width: 100%;
+  @include ultraWide() {
+    margin-top: 238px;
+  }
+  @include regularWidth() {
+    margin-top: 186px;
+  }
+  @include tabletPortrait() {
+    margin-top: 158.4px;
+  }
 }
 
 .card__heading {
-  margin-top: 14.7%;
   font-size: 1.25em;
   line-height: 1.5em;
   font-weight: 500;
@@ -89,7 +114,6 @@
 }
 
 .card__learn-more {
-  margin-top: 16.3%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -113,9 +137,9 @@
 %decoration_card {
   @extend %decoration;
   z-index: -2;
-  width: 10.655vw;
-  min-width: 140px;
-  @include media($tabletPortrait) {
+  width: 29%;
+
+  @include tabletPortrait() {
     display: none;
   }
 }

@@ -5,7 +5,7 @@
   row-gap: 20px;
   column-gap: 10px;
 
-  @include media(1100px) {
+  @include tablet() {
     margin-top: 20px;
     width: fit-content;
   }
@@ -22,7 +22,7 @@
   line-height: 1.444em;
   color: white;
 
-  @include media(1000px) {
+  @include tablet() {
     width: 100%;
   }
 }
@@ -36,16 +36,14 @@
   height: 3.125em;
   font-size: 1rem;
 
-  @include media($tablet) {
-    max-width: 18vw;
-    min-width: 200px;
+  @include tablet() {
+    max-width: 80%;
+    width: 20rem;
     padding-left: 6px;
   }
 
-  @include media(1100px) {
-    max-width: 100%;
-    width: clamp(13.75rem, 30vw, 300px);
-    padding-left: 1vw;
+  @include tabletPortrait() {
+    padding-left: 30px;
     justify-self: center;
   }
 }

@@ -3,11 +3,11 @@
   flex-direction: row;
   gap: 5.208vw;
 
-  @include media(1000px) {
+  @include media($tablet) {
     gap: 10vw;
   }
 
-  @include media(740px) {
+  @include media($tabletPortrait) {
     gap: 5vw;
   }
 }

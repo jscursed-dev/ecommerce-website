@@ -14,7 +14,7 @@
   flex-direction: row;
   gap: 7.36vw;
 
-  @include media(750px) {
+  @include smartphones() {
     flex-direction: column;
     gap: 0;
   }
